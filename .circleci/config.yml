@@ -1,0 +1,14 @@
+version: 2.1
+
+orbs:
+  pkgbuild: sdrik/pkgbuild@dev:first
+
+workflows:
+  "Main workflow":
+    jobs:
+    - pkgbuild/build_and_test:
+        package: pulseaudio-bluedio
+    - pkgbuild/build_and_test:
+        package: klibc
+    - pkgbuild/build_and_test:
+        package: klibc-git
